@@ -24,7 +24,7 @@ public class GatewaySecurityConfig {
         http
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
             .authorizeExchange(exchanges -> exchanges
-                    .pathMatchers("/user-service/api/users/visitors/**").permitAll()
+                    .pathMatchers("/api/v1/users/visitors/**").permitAll()
                     .pathMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyExchange().authenticated()
             )
